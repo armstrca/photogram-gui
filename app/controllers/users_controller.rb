@@ -57,5 +57,4 @@ class UsersController < ApplicationController
 
     redirect_to("/users/" + @the_user.username)
   end
-
 end

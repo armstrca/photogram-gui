@@ -7,7 +7,12 @@
 
   <dt>Edit user</dt>
 
-  <dd>Form goes here</dd>
+  <dd><form action="/update_user/:query_username" method="post">
+  <label for="username">Username</label>
+  <input id="username" type="text" name="query_username" value="<%= @the_user.username %>">
+
+  <button>Update user</button>
+</form></dd>
 </dl>
 
 

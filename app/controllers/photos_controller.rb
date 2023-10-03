@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    url_id = params.fetch("path_id")
+    url_id = params.fetch("input_photo_id")
 
     matching_photos = Photo.where({ :id => url_id })
 
@@ -21,9 +21,9 @@ class PhotosController < ApplicationController
 
     matching_photos = Photo.where({ :id => url_id })
 
-    the_photo = matching_photos.at(0)
+    @the_photo = matching_photos.at(0)
 
-    the_photo.destroy
+    @the_photo.destroy
 
     redirect_to("/photos")
   end
@@ -48,16 +48,16 @@ class PhotosController < ApplicationController
 
     matching_photos = Photo.where({ :id => the_id })
 
-    the_photo = matching_photos.at(0)
+    @the_photo = matching_photos.at(0)
 
     input_image = params.fetch("query_image")
     input_caption = params.fetch("query_caption")
 
-    the_photo.image = input_image
-    the_photo.caption = input_caption
+    @the_photo.image = input_image
+    @the_photo.caption = input_caption
 
-    the_photo.save
+    @the_photo.save
 
-    redirect_to("/photos/" + the_photo.id.to_s)
+    redirect_to("/photos/" + @the_photo.id.to_s)
   end
 end

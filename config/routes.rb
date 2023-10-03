@@ -12,11 +12,11 @@ Rails.application.routes.draw do
 
 
   get("/photos", { :controller => "photos", :action => "index" })
-  get("/photos/:path_id", { :controller => "photos", :action => "show" })
-  get("/delete_photos/:path_id", { :controller => "photos", :action => "destroy" })
+  get("/photos/:input_photo_id", { :controller => "photos", :action => "show" })
+  get("/delete_photo/:path_id", { :controller => "photos", :action => "destroy" })
   get("/insert_photo", { :controller => "photos", :action => "create" })
   get("/update_photo/:path_id", { :controller => "photos", :action => "update" })
-  post("/add_comment", { :controller => "comments", :action => "create" })
+  post("/add_comment/:path_id", { :controller => "comments", :action => "create" })
 
 
   # get("follow_requests")

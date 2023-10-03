@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    debugger
+    # debugger
     old_username = params.fetch("username")
     input_username = params.fetch("query_username")
 
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
     @the_user = matching_users.at(0)
 
-  
+    @the_user.username = input_username
 
     @the_user.save
 
